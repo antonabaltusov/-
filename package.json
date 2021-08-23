@@ -1,0 +1,23 @@
+{
+  "name": "timer-alarm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonabaltusov/timer-alarm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonabaltusov/timer-alarm/issues"
+  },
+  "homepage": "https://github.com/antonabaltusov/timer-alarm#readme",
+  "dependencies": {
+    "howler": "^2.2.3"
+  }
+}
