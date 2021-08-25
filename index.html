@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datetime superapp</title>
+    <script src="./src/main.js" type="module"></script>
+    <!-- <script src="/node_modules/howler/dist/howler.js"></script>
+    <script>
+        var sound = new Howl({
+          src: ["../sound/sound.mp3"]
+        });
+        
+    </script> -->
+</head>
+
+<body>
+    <header>
+        <button id="change_programm">таймер</button>
+    </header>
+    <div style="display: none;" id="timer">
+        <h3>Таймер</h3>
+        <h1 id="show_time">Задайте время</h1>
+        <form id="timer_start_form">
+            <label for="time">
+                <input type="time" name="time">
+            </label>
+            <button type="submit">start</button>
+        </form>
+        <div style="display: flex;">
+            <button type="submit" id="stop_timer">stop</button>
+            <button type="submit" id="pausa_timer">pausa</button>
+        </div>
+
+    </div>
+    <form id="datecalc">
+        <h3>Калькулятор дат</h3>
+        <label>
+            <strong>Первая дата:</strong>
+            <input type="date" name="firstDate" />
+        </label>
+        <label>
+            <strong>Вторая дата:</strong>
+            <input type="date" name="secondDate" />
+        </label>
+        <button type="submit">Расчитать промежуток</button>
+        <p id="datecalc__result"></p>
+    </form>
+</body>
+
+</html>
