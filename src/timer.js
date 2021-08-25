@@ -1,6 +1,4 @@
 // b. Вынесите общие функции обоих разделов в отдельный модуль.
-// c. Включите в таймер поле для установки времени и кнопки «Старт», «Стоп».
-// d. Для обновления времени на странице используйте setInterval().
 // e. Добавьте звуковое сопровождение, когда время заканчивается. Для работы со звуком воспользуйтесь сторонней библиотекой, например, Howler.js.
 import { DateTime } from "./luxon.js";
 // import soundSrc from "../sound/sound.mp3"
@@ -24,16 +22,12 @@ form.onsubmit = (event) => {
     event.preventDefault();
     working = true;
 
-    console.log('ghbdtn');
-    console.log('event ' + event.target);
     const formData = new FormData(event.target);
-    console.log(formData);
 
-    const startTime = DateTime.fromISO(formData.get('time'))
-    console.log(startTime.toFormat("'ч'HH 'мин'mm 'сек'ss"));
+    const startTime = DateTime.fromISO(formData.get('time'));
     tabloTime.innerHTML = startTime.toFormat("'ч'HH 'мин'mm 'сек'ss");
     timerGo(startTime);
-}
+};
 const timerGo = (time) => {
     let working = true;
 
@@ -44,14 +38,14 @@ const timerGo = (time) => {
         if (time.toFormat("HH mm ss") == "00 00 00") {
             clearInterval(interval);
             tabloTime.innerHTML = ("время вышло");
-            sound.play();
+            //sound.play();
         }
     }, 1000);
 
     stop.addEventListener("click", () => {
         clearInterval(interval);
         tabloTime.innerHTML = ("ч00 мин00 сек00");
-        sound.play();
+        //sound.play();
     });
 
     pausa.addEventListener("click", () => {
@@ -66,8 +60,5 @@ const timerGo = (time) => {
         }
     })
 }
-
-
-//export { form, stop }
 
 

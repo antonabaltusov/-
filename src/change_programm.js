@@ -1,5 +1,6 @@
-export default function changeProgramm(cangeButton, timer, dateCalcForm) {
-    // console.log(dateCalcForm.style.display);
+const timer = document.getElementById("timer");
+
+export default function changeProgramm(cangeButton, dateCalcForm) {
     if (cangeButton.innerHTML === "таймер") {
         timer.style.display = "block";
         dateCalcForm.style.display = "none";
