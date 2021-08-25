@@ -1,16 +1,10 @@
-// b. Вынесите общие функции обоих разделов в отдельный модуль.
-// e. Добавьте звуковое сопровождение, когда время заканчивается. Для работы со звуком воспользуйтесь сторонней библиотекой, например, Howler.js.
 import { DateTime } from "./luxon.js";
 import diffToHtml from "./common.js";
-// import soundSrc from "../sound/sound.mp3"
+import "../node_modules/howler/dist/howler.js";
 
-// Setup the new Howl.
-// const sound = new Howl({
-//     src: [soundSrc]
-// });
-//console.log(sound);
-// Play the sound.
-//sound.play();
+var sound = new Howl({
+    src: ['/sound/sound.mp3']
+  });
 
 const form = document.getElementById('timer_start_form');
 const tabloTime = document.getElementById('show_time');
@@ -41,14 +35,14 @@ const timerGo = (event, dataTime) => {
         if (time.toFormat("HH mm ss") == "00 00 00") {
             clearInterval(interval);
             tabloTime.innerHTML = ("время вышло");
-            //sound.play();
+            sound.play();
         }
     }, 1000);
 
     stop.addEventListener("click", () => {
         clearInterval(interval);
         tabloTime.innerHTML = ("Задайте времz");
-        //sound.play();
+        sound.play();
     });
 
     pausa.addEventListener("click", () => {

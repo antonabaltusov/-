@@ -5,7 +5,7 @@ export default function diffToHtml(elem, diff) {
         ${diff.months ? 'Месяцев: ' + diff.months : ''} 
         ${diff.days ? 'Дней: ' + diff.days : ''}
         ${diff.hour ? 'ч: ' + diff.hour : ''} 
-        ${diff.hour ? 'мин: ' + diff.minute : ''} 
-        ${diff.hour ? 'сек: ' + diff.second : ''}
+        ${diff.hour || diff.minute ? 'мин: ' + diff.minute : ''} 
+        ${diff.hour || diff.minute || diff.second ? 'сек: ' + diff.second : ''}
     </span>
 `};
