@@ -1,5 +1,6 @@
-import { diffDates, diffToHtml } from "./datecalc.js";
+import { diffDates } from "./datecalc.js";
 import { formatError } from "./utils.js";
+import diffToHtml from "./common.js";
 
 const dateCalcResult = document.getElementById("datecalc__result");
 
@@ -12,7 +13,7 @@ export default function handleCalcDates(event) {
 
     if (firstDate && secondDate) {
         const diff = diffDates(firstDate, secondDate);
-        dateCalcResult.innerHTML = diffToHtml(diff);
+        diffToHtml(dateCalcResult, diff);
     }
     else dateCalcResult.innerHTML = formatError("Для расчета промежутка необходимо заполнить оба поля");
 }
