@@ -1,9 +1,10 @@
-import { DateTime } from "./luxon.js";
+import { DateTime } from 'luxon';
 import diffToHtml from "./common.js";
-import "../node_modules/howler/dist/howler.js";
+import {Howl} from 'howler';
+import soundSrc from '../sound/sound.mp3';
 
 var sound = new Howl({
-    src: ['/sound/sound.mp3']
+    src: [soundSrc]
   });
 
 const form = document.getElementById('timer_start_form');
@@ -41,7 +42,7 @@ const timerGo = (event, dataTime) => {
 
     stop.addEventListener("click", () => {
         clearInterval(interval);
-        tabloTime.innerHTML = ("Задайте времz");
+        tabloTime.innerHTML = ("Задайте время");
         sound.play();
     });
 
